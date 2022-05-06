@@ -13,8 +13,10 @@ string_t name, fName;
 
 
 // FUNCTION DEFINITION 
-int attack(struct character player, struct character enemy);
-string_t createEnemy(struct character player);
+int attack(struct character attacker, struct character attacked);
+int defend(struct character defender, int damage);
+int dodge(struct character dodger, int attacked);
+int enemyChoice(struct
 string_t generateEnemyName(struct character player);
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
 void startBattle(struct character player, struct character enemy);
@@ -48,6 +50,9 @@ printf("But first, what is your name?\n");
 scanf("%s", &name);
 printf("And what is your friend's name?\n");
 scanf("%s", &fName);
+printf("You and ", fName,  " stand on opposite ends of the training hut. For a brief period, neither of you move.\nThen, suddenly, at nearly the exact same time, you charge at each other.");
+sleep(15);
+
 
 player.name = name;
 friendo.name = fName;
@@ -92,42 +97,53 @@ string_t choice(string_t choice1, string_t choice2, string_t choice3){
 }
 
 
-//ATTACK
-int attack(struct character player, struct character enemy){
+// START BATTLE
+void startBattle(struct character player, struct character enemy){
     
-    if (enemy.spd < player.spd){
+    printf("You begin your battle with ", enemy.name, ".\n");
+    
+    enemy.hp = player.hp;
+    enemy.atk = player.atk;
+    enemy.def = player.def;
+    enemy.spd = player.spd;
+    
+    while(player.hp > 0 && enemy.hp > 0){
+        string_t battleChoice;
+        printf("What would you like to do? Attack (1), Defend (2), or Dodge (3)?\nType 1, 2, or 3 to select.\n");
+        scanf("%s", &battleChoice);
         
-    } else {
-        return;
-    };
-}
+        while(battleChoice != "1" && battleChoice != "2" && battleChoice != "3"){
+            printf("That is not a valid choice. Please type 1, 2 or 3 to select your choice.\n");
+            scanf("%s", &battleChoice);
+        };
+        
+        enemy
+        
+        switch(battleChoice){
+            case "1":
+                int damage = attack(player, enemy);
+                printf("You attack, doing ", damage, " damage to ", enemy.name, "."
+    }
+    
+    
+};
 
-// CREATE ENEMY
-void createEnemy(struct character player){
+// ATTACK
+int attack(struct character attacker, struct character attacked){
     
-    int level = player.lvl;
-    int upper = level + 4;
-    int lower = level - 2;
-    int enemyLevel = (rand() % (upper - lower + 1)) + lower;
+};
+
+
+// DEFEND
+int defend(struct character defender, int damage){
     
-    if (enemyLevel < 1){
-        enemyLevel = 1;
-    };
+};
+
+
+// DODGE
+int dodge(struct character dodger, int attacked){
     
-    int basenum = enemyLevel - 1;
-    
-    if (basenum < 1){
-        basenum = enemyLevel;
-    };
-    
-    struct character enemy;
-        
-    enemy.lvl = enemyLevel;
-    enemy.name = generateEnemyName(player);
-    
-    
-    
-}
+};
 
 
 
@@ -176,3 +192,5 @@ string_t generateEnemyName(struct character player){
     
     return(enemyName);
 };
+
+hawe;iopuo;jhklrh

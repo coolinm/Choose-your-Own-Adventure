@@ -1,7 +1,4 @@
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 
 
 struct character {
@@ -63,11 +60,6 @@ void createEnemy(struct character player){
     enemy.name = 
     
 }
-
-/*
-Chooses a random enemy name from a list.
-The list it chooses from changes based on the location of the player character.
-*/
 
 int forestID = 1, desertID = 2, swampID = 3, mountainID = 4, oceanID = 5, caveID = 6;
 

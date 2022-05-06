@@ -145,6 +145,8 @@ void startBattle(struct character player, struct character enemy){
         };
         
         if(attacked == 1){
+            if (eAttacked == 1){
+                printf("You both attack each other. You deal ", damage, " damage, while ", enemy.name, " deals ", eDamage, " damage.\n");
             if (eDefend == 1){
                 damage = damage % 2;
                 printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n");
@@ -156,15 +158,33 @@ void startBattle(struct character player, struct character enemy){
             };
             
             enemy.hp = enemy.hp - damage;
-            
-            printf(enemy.name, " now has ", enemy.hp, " HP.");
         }
         
         if(defend == 1){
             if (eAttacked == 1){
-                printf(
+                eDamage = eDamage % 2;
+                printf("You defend against ", enemy.name, "'s attack, and it deals ", eDamage, " damage.\n";
+            } else if (eDodged == 1) {
+                damage = 0;
+                printf("You defend, expecting an attack, but ", enemy.name, " does nothing and waits.\n");
+            } else if (eDefend == 1) {
+                printf("You both defend, expecting an attack.\n");
+            };
             
-    }
+            player.hp = player.hp - eDamage;
+            
+            printf("You now have ", player.hp, " HP.\n");
+        };
+        
+        if(dodged == 1){
+            if(eAttacked == 1){
+                damage = 0;
+                printf(enemy.name, " tries attacking, but you dodge the attack.\n");
+            }
+                
+        };
+            
+    };
     
     
 };
@@ -239,5 +259,3 @@ string_t generateEnemyName(struct character player){
     
     return(enemyName);
 };
-
-hawe;iopuo;jhklrh

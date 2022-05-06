@@ -128,6 +128,9 @@ void startBattle(struct character player, struct character enemy){
                 break;
             case 3:
                 int eDodged = dodge();
+                if eDodged == 0{
+                    int eDodgeFail = 1;
+                };
                 break;
         };
         
@@ -141,20 +144,21 @@ void startBattle(struct character player, struct character enemy){
                 break;
             case "3":
                 int dodged = dodge();
+                if dodged == 0 {
+                    int dodgeFail = 1;
+                };
                 break:
         };
         
         if(attacked == 1){
             if (eAttacked == 1){
                 printf("You both attack each other. You deal ", damage, " damage, while ", enemy.name, " deals ", eDamage, " damage.\n");
-            if (eDefend == 1){
+            } else if (eDefend == 1){
                 damage = damage % 2;
                 printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n");
             } else if (eDodged == 1) {
                 damage = 0;
                 printf("You try attacking, but ", enemy.name, " dodges the attack.\n");
-            } else {
-                printf("You attack ", enemy.name, " dealing ", damage, " damage.\n");
             };
             
             enemy.hp = enemy.hp - damage;
@@ -172,17 +176,20 @@ void startBattle(struct character player, struct character enemy){
             };
             
             player.hp = player.hp - eDamage;
-            
-            printf("You now have ", player.hp, " HP.\n");
         };
         
         if(dodged == 1){
             if(eAttacked == 1){
                 damage = 0;
                 printf(enemy.name, " tries attacking, but you dodge the attack.\n");
-            }
-                
+            } else if (eDefend == 1){
+                printf("You prepare to dodge an attack, but ", enemy.name, " prepared to defend instead.\n");
+            } else if (eDodged == 1){
+                printf("You prepare to dodge an attack, but so does ", enemy.name, ".\n");
+            };
         };
+        
+        printf("You now have ", player.hp, " HP
             
     };
     

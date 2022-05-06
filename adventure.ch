@@ -14,7 +14,6 @@ string_t name, fName;
 
 // FUNCTION DEFINITION 
 int attack(struct character attacker, struct character attacked);
-int defend(struct character defender, int damage);
 int dodge(struct character dodger, int attacked);
 int enemyChoice(struct
 string_t generateEnemyName(struct character player);
@@ -117,12 +116,54 @@ void startBattle(struct character player, struct character enemy){
             scanf("%s", &battleChoice);
         };
         
-        enemy
+        int eChoice = enemyChoice;
+        
+        switch(eChoice){
+            case 1:
+                int eDamage = attack(enemy, player);
+                int eAttacked = 1;
+                break;
+            case 2:
+                int eDefend = 1;
+                break;
+            case 3:
+                int eDodged = dodge();
+                break;
+        };
         
         switch(battleChoice){
             case "1":
                 int damage = attack(player, enemy);
-                printf("You attack, doing ", damage, " damage to ", enemy.name, "."
+                int attacked = 1;
+                break;
+            case "2":
+                int defend = 1
+                break;
+            case "3":
+                int dodged = dodge();
+                break:
+        };
+        
+        if(attacked == 1){
+            if (eDefend == 1){
+                damage = damage % 2;
+                printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n");
+            } else if (eDodged == 1) {
+                damage = 0;
+                printf("You try attacking, but ", enemy.name, " dodges the attack.\n");
+            } else {
+                printf("You attack ", enemy.name, " dealing ", damage, " damage.\n");
+            };
+            
+            enemy.hp = enemy.hp - damage;
+            
+            printf(enemy.name, " now has ", enemy.hp, " HP.");
+        }
+        
+        if(defend == 1){
+            if (eAttacked == 1){
+                printf(
+            
     }
     
     
@@ -134,18 +175,24 @@ int attack(struct character attacker, struct character attacked){
 };
 
 
-// DEFEND
-int defend(struct character defender, int damage){
-    
-};
-
-
 // DODGE
-int dodge(struct character dodger, int attacked){
-    
+int dodge(){
+    int num = randint(1, 2);
+
+    if (num == 1){
+        return(1);
+    } else if (num == 2){
+        return(2);
+    };
 };
 
 
+// ENEMY CHOICE
+int enemyChoice(struct character player, struct character enemy){
+    int num = randint(1, 3);
+    
+    return(num);
+};
 
 /* forestID = 1, desertID = 2, swampID = 3, mountainID = 4, caveID = 5; */
 

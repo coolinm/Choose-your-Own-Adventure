@@ -14,8 +14,8 @@ string_t name, fName;
 
 // FUNCTION DEFINITION 
 int attack(struct character attacker, struct character attacked);
-int dodge(struct character dodger, int attacked);
-int enemyChoice(struct
+int dodge();
+int enemyChoice();
 string_t generateEnemyName(struct character player);
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
 void startBattle(struct character player, struct character enemy);
@@ -24,26 +24,24 @@ void startBattle(struct character player, struct character enemy);
 // CREATING PLAYER CHARACTER
 struct character player;
 struct character friendo;
-    
-printf("What is your character's name?\n");
-scanf("%s", &name);
-    
+
+// SETTING BASE STATS
 player.hp = 40;
-player.atk = 5;
-player.def = 3;
+player.atk = 7;
+player.def = 5;
 player.spd = 4;
 
 
 // INTRODUCTION
-printf("Your story starts in Asrich, a world where vast lands stretch across for millions of miles. A world many creatures big and small call home.\n");
+printf("Your story starts in Asrich, a world where vast lands stretch across for millions of miles.\nA world many creatures big and small call home.\n");
 sleep(10);
 printf("Asrich is ruled by a vengeful and oppressive king named Damion. Everyone who didn't work for Damion hated him.\n");
 sleep(10);
-printf("You live in a small village of humans that for years remained almost untouched Damion's greedy grasp. But 4 months ago, his troops ransacked your town,\nkilling many people you had known for years.\n");
+printf("You live in a small village of humans that for years remained almost untouched Damion's greedy grasp.\nBut 4 months ago, his troops ransacked your town, killing many people you had known for years.\n");
 sleep(15);
-printf("Resentment for King Damion's rule has led your people to train for a storm on the castle in attempt to kill Damion. You are one of the few who signed up\nto accompany the raid party.\n");
+printf("Resentment for King Damion's rule has led your people to train for a storm on the castle in attempt to kill Damion.\nYou are one of the few who signed up to accompany the raid party.\n");
 sleep(15);
-printf("Your story starts in a small training hut, where you and your friend you've known for so many years battles you with a dull wooden sword.\n");
+printf("Your story starts in a small training hut, where you and your friend you've known for so many years battles you\nwith a dull wooden sword.\n");
 sleep(15);
 printf("But first, what is your name?\n");
 scanf("%s", &name);
@@ -57,7 +55,10 @@ player.name = name;
 friendo.name = fName;
 
 
-start
+startBattle(player, friendo);
+
+
+
 
 
 
@@ -106,7 +107,16 @@ void startBattle(struct character player, struct character enemy){
     enemy.def = player.def;
     enemy.spd = player.spd;
     
+    int damage, eDamage;
+    int attacked, eAttacked;
+    int defend, eDefend;
+    int dodged, eDodged;
+    
     while(player.hp > 0 && enemy.hp > 0){
+        int damage, eDamage;
+        int attacked, eAttacked;
+        int defend, eDefend;
+        int dodged, eDodged;
         string_t battleChoice;
         printf("What would you like to do? Attack (1), Defend (2), or Dodge (3)?\nType 1, 2, or 3 to select.\n");
         scanf("%s", &battleChoice);
@@ -116,7 +126,9 @@ void startBattle(struct character player, struct character enemy){
             scanf("%s", &battleChoice);
         };
         
-        int eChoice = enemyChoice;
+        printf(battleChoice);
+        
+        int eChoice = enemyChoice();
         
         switch(eChoice){
             case 1:
@@ -128,7 +140,7 @@ void startBattle(struct character player, struct character enemy){
                 break;
             case 3:
                 int eDodged = dodge();
-                if eDodged == 0{
+                if (eDodged == 0){
                     int eDodgeFail = 1;
                 };
                 break;
@@ -140,21 +152,21 @@ void startBattle(struct character player, struct character enemy){
                 int attacked = 1;
                 break;
             case "2":
-                int defend = 1
+                int defend = 1;
                 break;
             case "3":
                 int dodged = dodge();
-                if dodged == 0 {
-                    int dodgeFail = 1;
+                if (dodged == 0) {
+                int dodgeFail = 1;
+                break;
                 };
-                break:
         };
         
-        if(attacked == 1){
-            if (eAttacked == 1){
+        if (attacked == 1){
+            if (eAttacked = 1){
                 printf("You both attack each other. You deal ", damage, " damage, while ", enemy.name, " deals ", eDamage, " damage.\n");
             } else if (eDefend == 1){
-                damage = damage % 2;
+                damage = damage / 2;
                 printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n");
             } else if (eDodged == 1) {
                 damage = 0;
@@ -162,12 +174,12 @@ void startBattle(struct character player, struct character enemy){
             };
             
             enemy.hp = enemy.hp - damage;
-        }
+        };
         
         if(defend == 1){
             if (eAttacked == 1){
-                eDamage = eDamage % 2;
-                printf("You defend against ", enemy.name, "'s attack, and it deals ", eDamage, " damage.\n";
+                eDamage = eDamage / 2;
+                printf("You defend against ", enemy.name, "'s attack, and it deals ", eDamage, " damage.\n");
             } else if (eDodged == 1) {
                 damage = 0;
                 printf("You defend, expecting an attack, but ", enemy.name, " does nothing and waits.\n");
@@ -189,7 +201,7 @@ void startBattle(struct character player, struct character enemy){
             };
         };
         
-        printf("You now have ", player.hp, " HP
+        printf("You now have ", player.hp, " HP.\n", enemy.name, " now has ", enemy.hp, " HP.\n");
             
     };
     
@@ -198,24 +210,27 @@ void startBattle(struct character player, struct character enemy){
 
 // ATTACK
 int attack(struct character attacker, struct character attacked){
+    int damage = attacker.atk;
+    
+    return(damage);
     
 };
 
 
 // DODGE
 int dodge(){
-    int num = randint(1, 2);
+    int num = randint(0, 1);
 
-    if (num == 1){
+    if (num == 0){
+        return(0);
+    } else if (num == 1){
         return(1);
-    } else if (num == 2){
-        return(2);
     };
 };
 
 
 // ENEMY CHOICE
-int enemyChoice(struct character player, struct character enemy){
+int enemyChoice(){
     int num = randint(1, 3);
     
     return(num);

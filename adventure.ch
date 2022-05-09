@@ -18,8 +18,8 @@ int dodge();
 int enemyChoice();
 string_t generateEnemyName(struct character player);
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
-void startBattle(struct character player, struct character enemy);
-    
+int startBattle(struct character player, struct character enemy);
+
 
 // CREATING PLAYER CHARACTER
 struct character player;
@@ -55,7 +55,13 @@ player.name = name;
 friendo.name = fName;
 
 
-startBattle(player, friendo);
+int fOutcome = startBattle(player, friendo);
+
+if(fOutcome = 1){
+    printf("
+};
+
+
 
 
 
@@ -98,7 +104,7 @@ string_t choice(string_t choice1, string_t choice2, string_t choice3){
 
 
 // START BATTLE
-void startBattle(struct character player, struct character enemy){
+int startBattle(struct character player, struct character enemy){
     
     printf("You begin your battle with ", enemy.name, ".\n");
     
@@ -127,84 +133,92 @@ void startBattle(struct character player, struct character enemy){
             case 1:
                 eDamage = attack(enemy, player);
                 attacked = 1;
-                printf("Enemy attacks");
                 break;
             case 2:
                 eDefend = 1;
-                printf("Enemy defends");
                 break;
             case 3:
                 eDodged = dodge();
                 if (eDodged == 0){
-                int eDodgeFail = 1;
-                printf("Enemy dodges");
-                break;
+                    int eDodgeFail = 1;
                 };
+                break;
         };
         
         switch(battleChoice){
             case "1":
                 damage = attack(player, enemy);
                 attacked = 1;
-                printf("You attack");
                 break;
             case "2":
                 defend = 1;
-                printf("You defend");
                 break;
             case "3":
                 dodged = dodge();
                 if (dodged = 0) {
-                int dodgeFail = 1;
-                printf("You dodge");
-                break;
+                    int dodgeFail = 1;
                 };
+                break;
+            
         };
         
-        if (attacked = 1){
+        if (attacked == 1){
             if (eAttacked = 1){
-                printf("You both attack each other. You deal ", damage, " damage, while ", enemy.name, " deals ", eDamage, " damage.\n");
+                printf("You both attack each other. You deal ", damage, " damage, while ", enemy.name, " deals ", eDamage, " damage.\n\n");
             } else if (eDefend = 1){
                 damage = damage / 2;
-                printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n");
+                printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n\n");
             } else if (eDodged = 1) {
                 damage = 0;
-                printf("You try attacking, but ", enemy.name, " dodges the attack.\n");
+                printf("You try attacking, but ", enemy.name, " dodges the attack.\n\n");
             };
             
             enemy.hp = enemy.hp - damage;
-        };
-        
-        if(defend = 1){
-            if (eAttacked = 1){
-                eDamage = eDamage / 2;
-                printf("You defend against ", enemy.name, "'s attack, and it deals ", eDamage, " damage.\n");
-            } else if (eDodged = 1) {
-                damage = 0;
-                printf("You defend, expecting an attack, but ", enemy.name, " does nothing and waits.\n");
-            } else if (eDefend = 1) {
-                printf("You both defend, expecting an attack.\n");
-            };
-            
             player.hp = player.hp - eDamage;
         };
         
-        if(dodged = 1){
-            if(eAttacked = 1){
+        if(defend == 1){
+            if (eAttacked = 1){
+                eDamage = eDamage / 2;
+                printf("You defend against ", enemy.name, "'s attack, and it deals ", eDamage, " damage.\n\n");
+            } else if (eDodged = 1) {
                 damage = 0;
-                printf(enemy.name, " tries attacking, but you dodge the attack.\n");
-            } else if (eDefend = 1){
-                printf("You prepare to dodge an attack, but ", enemy.name, " prepared to defend instead.\n");
-            } else if (eDodged = 1){
-                printf("You prepare to dodge an attack, but so does ", enemy.name, ".\n");
+                printf("You defend, expecting an attack, but ", enemy.name, " does nothing and waits.\n\n");
+            } else if (eDefend = 1) {
+                printf("You both defend, expecting an attack.\n\n");
             };
+            
+            enemy.hp = enemy.hp - damage;
+            player.hp = player.hp - eDamage;
         };
         
-        printf("You now have ", player.hp, " HP.\n", enemy.name, " now has ", enemy.hp, " HP.\n");
+        if(dodged == 1){
+            if(eAttacked = 1){
+                damage = 0;
+                printf(enemy.name, " tries attacking, but you dodge the attack.\n\n");
+            } else if (eDefend = 1){
+                printf("You prepare to dodge an attack, but ", enemy.name, " prepared to defend instead.\n\n");
+            } else if (eDodged = 1){
+                printf("You prepare to dodge an attack, but so does ", enemy.name, ".\n\n");
+            };
+            
+            enemy.hp = enemy.hp - damage;
+            player.hp = player.hp - eDamage;
+        };
+        
+        printf("You now have ", player.hp, " HP.\n", enemy.name, " now has ", enemy.hp, " HP.\n\n");
             
     };
     
-    
+    if (player.hp > enemy.hp){
+        printf("Congratulations! You won the battle against ", enemy.name, "!\n");
+        sleep(5);
+        return(1);
+    } else if (player.hp < enemy.hp){
+        printf("You lost against ", enemy.name, "...\n");
+        sleep(5);
+        return(0);
+    };
 };
 
 // ATTACK

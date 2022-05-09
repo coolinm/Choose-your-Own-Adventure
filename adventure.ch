@@ -47,7 +47,7 @@ printf("But first, what is your name?\n");
 scanf("%s", &name);
 printf("And what is your friend's name?\n");
 scanf("%s", &fName);
-printf("You and ", fName,  " stand on opposite ends of the training hut. For a brief period, neither of you move.\nThen, suddenly, at nearly the exact same time, you charge at each other.");
+printf("You and ", fName,  " stand on opposite ends of the training hut. For a brief period, neither of you move.\nThen, suddenly, at nearly the exact same time, you charge at each other.\n");
 sleep(15);
 
 
@@ -107,16 +107,11 @@ void startBattle(struct character player, struct character enemy){
     enemy.def = player.def;
     enemy.spd = player.spd;
     
-    int damage, eDamage;
-    int attacked, eAttacked;
-    int defend, eDefend;
-    int dodged, eDodged;
-    
     while(player.hp > 0 && enemy.hp > 0){
-        int damage, eDamage;
-        int attacked, eAttacked;
-        int defend, eDefend;
-        int dodged, eDodged;
+        int damage = 0, eDamage = 0;
+        int attacked = 0, eAttacked = 0;
+        int defend = 0, eDefend = 0;
+        int dodged = 0, eDodged = 0;
         string_t battleChoice;
         printf("What would you like to do? Attack (1), Defend (2), or Dodge (3)?\nType 1, 2, or 3 to select.\n");
         scanf("%s", &battleChoice);
@@ -126,49 +121,53 @@ void startBattle(struct character player, struct character enemy){
             scanf("%s", &battleChoice);
         };
         
-        printf(battleChoice);
-        
         int eChoice = enemyChoice();
         
         switch(eChoice){
             case 1:
-                int eDamage = attack(enemy, player);
-                int eAttacked = 1;
+                eDamage = attack(enemy, player);
+                attacked = 1;
+                printf("Enemy attacks");
                 break;
             case 2:
-                int eDefend = 1;
+                eDefend = 1;
+                printf("Enemy defends");
                 break;
             case 3:
-                int eDodged = dodge();
+                eDodged = dodge();
                 if (eDodged == 0){
-                    int eDodgeFail = 1;
-                };
+                int eDodgeFail = 1;
+                printf("Enemy dodges");
                 break;
+                };
         };
         
         switch(battleChoice){
             case "1":
-                int damage = attack(player, enemy);
-                int attacked = 1;
+                damage = attack(player, enemy);
+                attacked = 1;
+                printf("You attack");
                 break;
             case "2":
-                int defend = 1;
+                defend = 1;
+                printf("You defend");
                 break;
             case "3":
-                int dodged = dodge();
-                if (dodged == 0) {
+                dodged = dodge();
+                if (dodged = 0) {
                 int dodgeFail = 1;
+                printf("You dodge");
                 break;
                 };
         };
         
-        if (attacked == 1){
+        if (attacked = 1){
             if (eAttacked = 1){
                 printf("You both attack each other. You deal ", damage, " damage, while ", enemy.name, " deals ", eDamage, " damage.\n");
-            } else if (eDefend == 1){
+            } else if (eDefend = 1){
                 damage = damage / 2;
                 printf("You attack while ", enemy.name, " defends, and you do ", damage, " damage.\n");
-            } else if (eDodged == 1) {
+            } else if (eDodged = 1) {
                 damage = 0;
                 printf("You try attacking, but ", enemy.name, " dodges the attack.\n");
             };
@@ -176,27 +175,27 @@ void startBattle(struct character player, struct character enemy){
             enemy.hp = enemy.hp - damage;
         };
         
-        if(defend == 1){
-            if (eAttacked == 1){
+        if(defend = 1){
+            if (eAttacked = 1){
                 eDamage = eDamage / 2;
                 printf("You defend against ", enemy.name, "'s attack, and it deals ", eDamage, " damage.\n");
-            } else if (eDodged == 1) {
+            } else if (eDodged = 1) {
                 damage = 0;
                 printf("You defend, expecting an attack, but ", enemy.name, " does nothing and waits.\n");
-            } else if (eDefend == 1) {
+            } else if (eDefend = 1) {
                 printf("You both defend, expecting an attack.\n");
             };
             
             player.hp = player.hp - eDamage;
         };
         
-        if(dodged == 1){
-            if(eAttacked == 1){
+        if(dodged = 1){
+            if(eAttacked = 1){
                 damage = 0;
                 printf(enemy.name, " tries attacking, but you dodge the attack.\n");
-            } else if (eDefend == 1){
+            } else if (eDefend = 1){
                 printf("You prepare to dodge an attack, but ", enemy.name, " prepared to defend instead.\n");
-            } else if (eDodged == 1){
+            } else if (eDodged = 1){
                 printf("You prepare to dodge an attack, but so does ", enemy.name, ".\n");
             };
         };
@@ -220,12 +219,8 @@ int attack(struct character attacker, struct character attacked){
 // DODGE
 int dodge(){
     int num = randint(0, 1);
-
-    if (num == 0){
-        return(0);
-    } else if (num == 1){
-        return(1);
-    };
+    
+    return(num);
 };
 
 

@@ -81,7 +81,34 @@ if(fOutcome = 1){
         sleep(7);
         printf("You and your companion share an expression of both excitement and nervousness. Then, looking back\nat Jacob, you nod.");
         sleep(5);
-        printf("A few minutes later, you and the raid party set off into the forest in the direction of the castle. You "
+        printf("A few minutes later, you and the raid party set off into the forest in the direction of the castle.\nEveryone is silent for a long while, everyone secretly afraid of what might happen when they reach the castle.\n");
+        sleep(8);
+        printf("Then, about halfway across forest, you feel a unfamiliar dread seep into your heart. Looking at\neveryone else, they seem to be affected, too. Then you see it. The terrifying beast that walks the forest.\n");
+        sleep(7);
+        printf("The Twilight Lich. Legends tell of a ghoulish monster who stalks between the trees, searching\nfor weary travelers to consume the souls of. You freeze, and so does your entire party. It hasn't noticed you yet.\n");
+        sleep(8);
+        printf("You quickly think of a plan.");
+        
+        string_t sChoice = choice("Attack the beast", "run past it", "sneak around it");
+        
+        // Attack
+        if(sChoice == "1"){
+            printf("You and your party charge the great Twilight Lich. It's head whips towards you, and with\na devilish screech, it begins charging back at you. When it gets to you, it uses it's razor sharp claws to quickly dispatch most of your party.\n");
+            sleep(9);
+            printf("Darting around the trees of the bloody battlefield with the grace of a gazelle, it takes\nout your team with deadly precision. Eventually, the only person left is you.\n");
+            sleep(7);
+            printf("The monster stops in front of you, staring straight into your soul with dead eyes. Fear\nhas overtaken you, and you cannot move. With one last swing of it's claws, everything fades to black.\n");
+            sleep(7);
+            printf("You achieved the Death 1 Ending.");
+        // Run
+        } else if (sChoice == "2"){
+            
+            
+        // Sneak
+        } else if (sChoice == "3"){
+            
+            
+        };
         
     // Surrender
     } else if (fChoice == "2"){

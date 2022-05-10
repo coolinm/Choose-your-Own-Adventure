@@ -50,33 +50,47 @@ scanf("%s", &fName);
 printf("You and ", fName,  " stand on opposite ends of the training hut. For a brief period, neither of you move.\nThen, suddenly, at nearly the exact same time, you charge at each other.\n");
 sleep(15);
 
-
 player.name = name;
 friendo.name = fName;
-
 
 int fOutcome = startBattle(player, friendo);
 string_t fChoice;
 
+
+// FIRST CHOICE
+
+
+
+// Win
 if(fOutcome = 1){
-    printf("You knock down ", friendo.name, ", and they look back up at you with a surprised smile on their face.\n\"Wow! Good fight!\"");
+    printf("You knock down ", friendo.name, ", and they look back up at you with a surprised smile on their face.\n\"Wow! Good fight!\"\n");
     sleep(7);
-    printf("What do you do now?\nHelp ", enemy.name, " get back up (1) or give up and put your sword away (2)?\nType 1 or 2 to select your choice."):;
+    printf("What do you do now?\nHelp ", enemy.name, " get back up (1) or give up and put your sword away (2)?\nType 1 or 2 to select your choice.\n"):;
     scanf("%s", &fChoice);
     
     while(fChoice != "1" && fChoice != "2"){
-        printf("That is not a valid option. Please type 1 or 2 to select your option.");
+        printf("That is not a valid option. Please type 1 or 2 to select your option.\n");
         scanf("%s", &fChoice);
     };
     
+    // Help
     if (fChoice == "1"){
+        printf("You hold your hand out to ", friendo.name, ", pulling them back up to their feet. They smile at you\nhappily. Then, a muscular, serious-faced man walks into the training hut.\n");
+        sleep(7);
+        printf("\"Jacob! What is it?\" ", friendo.name, " asks. \"It's time. The raid party is almost finished. We\n need a few more people to accompany us. You two get your things ready.\" Jacob remarks.\n");
+        sleep(7);
+        printf("You and your companion share an expression of both excitement and nervousness. Then, looking back\nat Jacob, you nod.");
+        sleep(5);
+        printf("A few minutes later, you and the raid party set off into the forest in the direction of the castle. You "
         
+    // Surrender
     } else if (fChoice == "2"){
+        
         
     };
     
     
-    
+// Lose
 } else if (fOutcome = 0) {
     
 };

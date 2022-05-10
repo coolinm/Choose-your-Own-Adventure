@@ -56,14 +56,30 @@ friendo.name = fName;
 
 
 int fOutcome = startBattle(player, friendo);
+string_t fChoice;
 
 if(fOutcome = 1){
-    printf("
+    printf("You knock down ", friendo.name, ", and they look back up at you with a surprised smile on their face.\n\"Wow! Good fight!\"");
+    sleep(7);
+    printf("What do you do now?\nHelp ", enemy.name, " get back up (1) or give up and put your sword away (2)?\nType 1 or 2 to select your choice."):;
+    scanf("%s", &fChoice);
+    
+    while(fChoice != "1" && fChoice != "2"){
+        printf("That is not a valid option. Please type 1 or 2 to select your option.");
+        scanf("%s", &fChoice);
+    };
+    
+    if (fChoice == "1"){
+        
+    } else if (fChoice == "2"){
+        
+    };
+    
+    
+    
+} else if (fOutcome = 0) {
+    
 };
-
-
-
-
 
 
 

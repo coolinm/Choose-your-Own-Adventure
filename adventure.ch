@@ -16,7 +16,6 @@ string_t name, fName;
 int attack(struct character attacker, struct character attacked);
 int dodge();
 int enemyChoice();
-string_t generateEnemyName(struct character player);
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
 int startBattle(struct character player, struct character enemy);
 
@@ -58,8 +57,6 @@ string_t fChoice;
 
 
 // FIRST CHOICE
-
-
 
 // Win
 if(fOutcome = 1){
@@ -125,7 +122,7 @@ if(fOutcome = 1){
             
         // Sneak
         } else if (sChoice == "3"){
-            printf("You and your team sneak around the Lich, successfully avoiding it's wrath. You make it out of\nthe forest and get into the castle through a small backdoor. With some trouble, you make it past teh waves and waves of guards that find you throughout the castle.\n");
+            printf("You and your team sneak around the Lich, successfully avoiding it's wrath. You make it out of\nthe forest and get into the castle through a small backdoor. With some trouble, you make it past the waves and waves of guards that find you throughout the castle.\n");
             sleep(8);
             printf("You make it to the throne room, where King Damion sits. He is very powerful, but heavily outnumbered.\nYou kill him after a short struggle, saving the kingdom.\n");
             sleep(5);
@@ -136,7 +133,32 @@ if(fOutcome = 1){
         
     // Surrender
     } else if (fChoice == "2"){
+        printf("You give up and put your sword away. ", friendo.name, " stares at you, a little disappointed that you gave up.\nThey then light up as if they remembered something important. \"Hey, do you think you would be up to search for an artifact in the desert?\" They ask.\n");
+        sleep(9);
+        printf("\"Sure,\" you say. You quickly pack your stuff, setting off towards the artifact. You don't know what it does, as\n", friendo.name, " kept the details vague, but they've never lead you wrong, right? What's the worst that could happen?\n");
+        sleep(7);
+        printf(friendo.name, " tells you about 3 ways to reach the desert. You can travel through a murky swamp, one through a\ndangerous valley, and one across a perilous mountain.\n");
+        sleep(5);
         
+        string_t sChoice2 = choice("Travel through the swamp", "valley", "mountain");
+        
+        // Swamp
+        if(sChoice2 == "1"){
+            printf("You set off towards the swamp. After a short journey, filled with frogs, snakes, and a few dangerous monsters,\nyou reach the desert. You look into your bag, and with a dark sense of dread, you realize you are dangerously low on food and water.\n");
+            sleep(7);
+            printf("To make matters worse, after an hour of walking through the sweltering desert, you and ", friendo.name, " are seperated by a sandstorm. You wander the desert for what seems like days, searching for any signs of life. But there is nothing.\n");
+            sleep(7);
+            printf("You run a
+            
+        // Valley
+        } else if (sChoice2 == "2"){
+            
+            
+        // Mountain
+        } else if (sChoice2 == "3"){
+            
+        
+        };
         
     };
     

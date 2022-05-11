@@ -146,9 +146,13 @@ if(fOutcome = 1){
         if(sChoice2 == "1"){
             printf("You set off towards the swamp. After a short journey, filled with frogs, snakes, and a few dangerous monsters,\nyou reach the desert. You look into your bag, and with a dark sense of dread, you realize you are dangerously low on food and water.\n");
             sleep(7);
-            printf("To make matters worse, after an hour of walking through the sweltering desert, you and ", friendo.name, " are seperated by a sandstorm. You wander the desert for what seems like days, searching for any signs of life. But there is nothing.\n");
+            printf("To make matters worse, after an hour of walking through the sweltering desert, you and ", friendo.name, " are\nseperated by a sandstorm. You wander the desert for what seems like days, searching for any signs of life. But there is nothing.\n");
             sleep(7);
-            printf("You run a
+            printf("Tired, thirsty, and hungry, you give up, falling to your knees, then down onto your side in the sand. Laying down in the harsh climate, you surrender, dying alone in the desert.\n");
+            sleep(6);
+            printf("You achieved the Surrender Ending.\n");
+            sleep(5);
+            exit();
             
         // Valley
         } else if (sChoice2 == "2"){

@@ -100,11 +100,28 @@ if(fOutcome = 1){
             printf("The monster stops in front of you, staring straight into your soul with dead eyes. Fear\nhas overtaken you, and you cannot move. With one last swing of it's claws, everything fades to black.\n");
             sleep(7);
             printf("You achieved the Death 1 Ending.");
-            exit()
+            exit();
             
         // Run
         } else if (sChoice == "2"){
-            
+            printf("You look to your party, quietly communicating to them to run as fast as they can past\nthe Lich on your signal. Shortly after, you wave your hand, signaling them to begin running.\n");
+            sleep(7);
+            printf("You run, and your team follows. The Lich hears you and whips its head in your direction.\nIt lets out a violent roar and begins striding in your direction. You yell to the party to look out and not to stop running.\n");
+            sleep(9);
+            printf("The Lich catches a few of your men, killing them switfly. Despite this, everyone keeps running,\nfearing what will happen to them if they stop. You hear the fierce galloping of the Lich hot on your tail.\n");
+            sleep(8);
+            printf("You eventually make it out of the forest. Looking back, you see that you have lost only a few men.\nAfter quickly treating any wounds, you continue on, making it to the castle soon after.\n");
+            sleep(8);
+            printf("As you enter the castle through an unsecured backdoor, you quickly find yourself faced with an\nonslaught of guards. A member of your party tells you and your friend to run to the throne room, and that they will hold off the guards.\n");
+            sleep(9);
+            printf("You and ", friendo.name, " run to the throne room, where King Damion sits. He looks at you.\n\"I've been expecting you,\" he says. He starts monologuing about his evil plan, and despite everything, you agree with him. You don't know why, but you do.\n");
+            sleep(9);
+            printf("You look to your friend, who looks ready to kill the king. You put your hand on your sword.\nYour brain has been corrupted by greed, and all you can think about is the power that being King would grant you. You pull out your sword.\n");
+            sleep(8);
+            printf("You swing your sword at your friend. Caught off, the sword goes straight through his stomach.\nFalling sideways, his body hits the floor, dead and cold. King Damion smiles evily at you, and you smile back.\n");
+            sleep(5);
+            printf("You achieved the Greed Ending.");
+            exit();
             
         // Sneak
         } else if (sChoice == "3"){

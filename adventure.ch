@@ -99,7 +99,7 @@ if(fOutcome = 1){
             sleep(7);
             printf("The monster stops in front of you, staring straight into your soul with dead eyes. Fear\nhas overtaken you, and you cannot move. With one last swing of it's claws, everything fades to black.\n");
             sleep(7);
-            printf("You achieved the Death 1 Ending.");
+            printf("You achieved the Death 1 Ending.\n");
             exit();
             
         // Run
@@ -120,12 +120,17 @@ if(fOutcome = 1){
             sleep(8);
             printf("You swing your sword at your friend. Caught off, the sword goes straight through his stomach.\nFalling sideways, his body hits the floor, dead and cold. King Damion smiles evily at you, and you smile back.\n");
             sleep(5);
-            printf("You achieved the Greed Ending.");
+            printf("You achieved the Greed Ending.\n");
             exit();
             
         // Sneak
         } else if (sChoice == "3"){
-            
+            printf("You and your team sneak around the Lich, successfully avoiding it's wrath. You make it out of\nthe forest and get into the castle through a small backdoor. With some trouble, you make it past teh waves and waves of guards that find you throughout the castle.\n");
+            sleep(8);
+            printf("You make it to the throne room, where King Damion sits. He is very powerful, but heavily outnumbered.\nYou kill him after a short struggle, saving the kingdom.\n");
+            sleep(5);
+            printf("You achieved the Happy 1 Ending.\n");
+            exit();
             
         };
         

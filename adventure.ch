@@ -100,6 +100,8 @@ if(fOutcome = 1){
             printf("The monster stops in front of you, staring straight into your soul with dead eyes. Fear\nhas overtaken you, and you cannot move. With one last swing of it's claws, everything fades to black.\n");
             sleep(7);
             printf("You achieved the Death 1 Ending.");
+            exit()
+            
         // Run
         } else if (sChoice == "2"){
             

@@ -74,7 +74,7 @@ if(fOutcome = 1){
     if (fChoice == "1"){
         printf("You hold your hand out to ", friendo.name, ", pulling them back up to their feet. They smile at you\nhappily. Then, a muscular, serious-faced man walks into the training hut.\n");
         sleep(7);
-        printf("\"Jacob! What is it?\" ", friendo.name, " asks. \"It's time. The raid party is almost finished. We\n need a few more people to accompany us. You two get your things ready.\" Jacob remarks.\n");
+        printf("\"Jacob! What is it?\" ", friendo.name, " asks. \"", player.name, ", ", friendo.name, ". The raid party is almost finished. We\n need a few more people to accompany us. You two get your things ready.\" Jacob remarks.\n");
         sleep(7);
         printf("You and your companion share an expression of both excitement and nervousness. Then, looking back\nat Jacob, you nod.");
         sleep(5);
@@ -111,7 +111,7 @@ if(fOutcome = 1){
             sleep(8);
             printf("As you enter the castle through an unsecured backdoor, you quickly find yourself faced with an\nonslaught of guards. A member of your party tells you and your friend to run to the throne room, and that they will hold off the guards.\n");
             sleep(9);
-            printf("You and ", friendo.name, " run to the throne room, where King Damion sits. He looks at you.\n\"I've been expecting you,\" he says. He starts monologuing about his evil plan, and despite everything, you agree with him. You don't know why, but you do.\n");
+            printf("You and ", friendo.name, " run to the throne room, where King Damion sits. He looks at you.\n\"I've been expecting you, " ,player.name, "\," he says. He starts monologuing about his evil plan, and despite everything, you agree with him. You don't know why, but you do.\n");
             sleep(9);
             printf("You look to your friend, who looks ready to kill the king. You put your hand on your sword.\nYour brain has been corrupted by greed, and all you can think about is the power that being King would grant you. You pull out your sword.\n");
             sleep(8);
@@ -124,7 +124,7 @@ if(fOutcome = 1){
         } else if (sChoice == "3"){
             printf("You and your team sneak around the Lich, successfully avoiding it's wrath. You make it out of\nthe forest and get into the castle through a small backdoor. With some trouble, you make it past the waves and waves of guards that find you throughout the castle.\n");
             sleep(8);
-            printf("You make it to the throne room, where King Damion sits. He is very powerful, but heavily outnumbered.\nYou kill him after a short struggle, saving the kingdom.\n");
+            printf("You make it to the throne room, where King Damion sits. \"", player.name, ", ", friendo.name, "... you made it...\"He says.\nHe is very powerful, but heavily outnumbered.You kill him after a short struggle, saving the kingdom.\n");
             sleep(5);
             printf("You achieved the Happy 1 Ending.\n");
             exit();
@@ -133,7 +133,7 @@ if(fOutcome = 1){
         
     // Surrender
     } else if (fChoice == "2"){
-        printf("You give up and put your sword away. ", friendo.name, " stares at you, a little disappointed that you gave up.\nThey then light up as if they remembered something important. \"Hey, do you think you would be up to search for an artifact in the desert?\" They ask.\n");
+        printf("You give up and put your sword away. ", friendo.name, " stares at you, a little disappointed that you gave up.\nThey then light up as if they remembered something important. \"" player.name, ", do you think you would be up to search for an artifact in the desert?\" They ask.\n");
         sleep(9);
         printf("\"Sure,\" you say. You quickly pack your stuff, setting off towards the artifact. You don't know what it does, as\n", friendo.name, " kept the details vague, but they've never lead you wrong, right? What's the worst that could happen?\n");
         sleep(7);

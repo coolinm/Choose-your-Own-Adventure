@@ -60,7 +60,7 @@ string_t fChoice;
 
 // Win
 if(fOutcome = 1){
-    printf("You knock down ", friendo.name, ", and they look back up at you with a surprised smile on their face.\n\"Wow! Good fight!\"\n");
+    printf("You knock down ", friendo.name, ", and they look back up at you with a surprised smile on their face.\n\"Wow! Good fight, ", player.name, "!\"\n");
     sleep(7);
     printf("What do you do now?\nHelp ", enemy.name, " get back up (1) or give up and put your sword away (2)?\nType 1 or 2 to select your choice.\n"):;
     scanf("%s", &fChoice);
@@ -189,6 +189,44 @@ if(fOutcome = 1){
     
 // Lose
 } else if (fOutcome = 0) {
+    printf("You are knocked down by ", friendo.name, ". They look down at you on the ground with a smile on their face.\n\"Nice try, ", player.name, "!\"\n");
+    sleep(7);
+    printf("You shake yourself off and pull yourself back up to your feet. You smile at ", friendo.name, "\nhappily. Then, a muscular, serious-faced man walks into the training hut.\n");
+    sleep(7);
+    printf("\"Jacob! What is it?\" ", friendo.name, " asks. \"", player.name, ", " friendo.name, ". The raid party is almost finished. We\n need a few more people to accompany us. You two get your things ready.\" Jacob remarks.\n");
+    sleep(7);
+    printf("You and your companion share an expression of both excitement and nervousness. Then, looking back\nat Jacob, you nod.");
+    sleep(5);
+    printf("The party sets off to a haunted valley, where everything around you is dreary and blood-curdling.\nYour party has come up with 3 options to get to the castle from there.\n");
+    sleep(7);
+    
+    string_t sChoice3;
+    
+    sChoice3 = choice("Continue through the valley", "go off on a potential shortcut", "set up camp for the night");
+    
+    // Valley
+    if (sChoice3 == "1"){
+        printf("You decide to continue through the valley. \"You heard ", player.name, "! Keep moving!\" ", friendo.name, " says.\nYour party eventually makes it to the castle, and begin to storm through.\n");
+        sleep(8);
+        printf("The castle is littered with guards, but the rest of your party holds them off while you and your friend head to\nthe throne room. There you meet King Damion, who is ready for a fight.\n");
+        sleep(8);
+        printf("After a long and arduous battle, you get the best of King Damion and knowck him down. For a moment, your friend lets their guard down.\nKing Damion rushes forward, stabbing your friend in the back.\n");
+        sleep(8);
+        printf("Fueled by rage, you race at Damion, killing him easily. You won and saved the kingdom, but lost the one person who felt like family.\n");
+        sleep(5);
+        printf("You achieved the Bittersweet Ending.");
+        exit();
+    
+    // Shortcut
+    } else if (sChoice3 == "2"){
+        
+        
+    // Camp
+    } else if (sChoice3 == "3"){
+        
+        
+        
+    };
     
 };
 

@@ -137,18 +137,20 @@ if(fOutcome = 1){
         sleep(9);
         printf("\"Sure,\" you say. You quickly pack your stuff, setting off towards the artifact. You don't know what it does, as\n", friendo.name, " kept the details vague, but they've never lead you wrong, right? What's the worst that could happen?\n");
         sleep(7);
-        printf(friendo.name, " tells you about 3 ways to reach the desert. You can travel through a murky swamp, one through a\ndangerous valley, and one across a perilous mountain.\n");
+        printf(friendo.name, " tells you about 3 ways to reach the desert. You can travel through a murky swamp, one through a\valley, and one across a perilous mountain.\n");
         sleep(5);
         
         string_t sChoice2 = choice("Travel through the swamp", "valley", "mountain");
         
         // Swamp
         if(sChoice2 == "1"){
+            printf(friendo.name, " looks a little bit uncertain, but agrees. \"", player.name, ", are you sure? It seems...\nunpleasent...\" they say.")
+            sleep(5);
             printf("You set off towards the swamp. After a short journey, filled with frogs, snakes, and a few dangerous monsters,\nyou reach the desert. You look into your bag, and with a dark sense of dread, you realize you are dangerously low on food and water.\n");
             sleep(7);
             printf("To make matters worse, after an hour of walking through the sweltering desert, you and ", friendo.name, " are\nseperated by a sandstorm. You wander the desert for what seems like days, searching for any signs of life. But there is nothing.\n");
             sleep(7);
-            printf("Tired, thirsty, and hungry, you give up, falling to your knees, then down onto your side in the sand. Laying down in the harsh climate, you surrender, dying alone in the desert.\n");
+            printf("Tired, thirsty, and hungry, you give up, falling to your knees, then down onto your side in the sand. Laying\ndown in the harsh climate, you surrender, dying alone in the desert.\n");
             sleep(6);
             printf("You achieved the Surrender Ending.\n");
             sleep(5);
@@ -156,7 +158,16 @@ if(fOutcome = 1){
             
         // Valley
         } else if (sChoice2 == "2"){
-            
+            printf("You set off to the valley. After only a few hours of trekking, you make it safely there. The valley is beautiful,\nand you admire the river flowing through it as you continue on.\n");
+            sleep(7);
+            printf("With little trouble, you travel through the valley. You reach the desert, where your map leads to the location of\nthe ruins where the artifact is located.\n");
+            sleep(6);
+            printf("\"", player.name ", I can't find anything...", friendo.name, " says. After a while, a local desert dweller finds\nyou and tells them that the artifact they search for was taken long ago.\n");
+            sleep(7);
+            printf("Disappointed but slightly amused by the situation, you and your companion return home unharmed.\n");
+            sleep(4);
+            printf("You achieved the Happy 2 Ending.\n");
+            exit();
             
         // Mountain
         } else if (sChoice2 == "3"){

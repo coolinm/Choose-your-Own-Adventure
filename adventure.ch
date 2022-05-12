@@ -219,11 +219,23 @@ if(fOutcome = 1){
     
     // Shortcut
     } else if (sChoice3 == "2"){
-        
+        printf("Walking towards the shortcut, you are thankful to finally be heading away from the dreadful valley. Everything is going well until\na group of bandits attack you from behind a rock. \"", player.name, ", look out!\" ", friendo.name, " shouts.\n");
+        sleep(9);
+        printf("The bandits start attacking you and your party, using dirty tricks to defeat your men. Realizing you are outmatched, you\nbegin to run away, but a bandit finds you. He throws his dagger straight toward your face. Everything goes dark.\n");
+        sleep(8);
+        printf("You achieved the Death Ending 2.");
+        exit();
         
     // Camp
     } else if (sChoice3 == "3"){
-        
+        printf("Your party sets up tents while you go out and find food. It's dark when you come back, and everyone has quick dinner before\nthey retire to their tents. \"Goodnight, ", friendo.name, ",\" you say. \"Night, ", player.name, ", they reply.\n");
+        sleep(8);
+        printf("You awake in a cold sweat that night, and you look around to find your tent flooded with spirits. You scream, and the spirits begin to\n writhe wildly in the tent. Then, they take a hold on your friend laying next to you.\n");
+        sleep(7);
+        printf("Realizing what they are doing, you run towards them, trying to shake them awake, but you're too late. ", friendo.name, " is dead,\nstolen away by the spirits. You cry over their body, slamming your first into the ground.\n");
+        sleep(6);
+        printf("You achieved the Sad Ending.\n");
+        exit();
         
         
     };

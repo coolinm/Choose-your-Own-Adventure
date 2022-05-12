@@ -171,8 +171,17 @@ if(fOutcome = 1){
             
         // Mountain
         } else if (sChoice2 == "3"){
+            printf("You leave home towards the mountain. ", friendo.name, " is uneasy and quiet for the whole trip,\nbut you chalk it up to them just being a little nervous to pass over the mountain.\n");
+            sleep(7);
+            printf("Making it to the desert, you look to your map to find the ancient ruins that hold the artifact.\nFinding the ruins quickly, your search isn't long before you find the artifact. You show it to your friend, but they don't seem excited.\n");
+            sleep(9);
+            printf("Walking away from the ruins with ", friendo.name, ", you look at the artifact carefully. But\nsuddenly, you feel a pain in your back. A moment later, the pain is searing, and you fall to the ground.\n");
+            sleep(8);
+            printf(friendo.name, " has stabbed you. The world around you becomes blurry and faint, and you only hear one thing before you\n slip away. \"I'm sorry, ", player.name, ".\" ", friendo.name, " says.\n");
+            sleep(7);
+            printf("You achieved the Betrayal Ending.\n");
+            exit();
             
-        
         };
         
     };

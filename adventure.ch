@@ -9,7 +9,7 @@ struct character {
     string_t name;
     int hp, atk, def, spd, location;
 };
-string_t name, fName, cheat;
+string_t name, fName, cheat, cheatnum;
 
 
 // FUNCTION DEFINITION 
@@ -42,9 +42,18 @@ while(cheat != "y" && cheat != "Y" && cheat != "n" && cheat != "N"){
 };
 
 if (cheat == "y"){
-    printf(
+    printf("What ending would you like to get a tutorial for? There are 9.\nType the number of the ending you want to learn about.\n");
+    scanf("%s", &cheatnum);
+    
+    while(cheatnum != "1" && cheatnum != "2" && cheatnum != "3" && cheatnum != "4" && cheatnum != "5" && cheatnum != "6" && cheatnum != "7" && cheatnum != "8" && cheatnum != "9"){
+        printf("That is not a valid option. Please type the number of the ending you want to learn about.\n");
+        scanf("%s", &cheatnum);
+        
+    };
+    
+    cheatsheet(cheatnum);
 
-
+};
 
 // INTRODUCTION
 printf("Your story starts in Asrich, a world where vast lands stretch across for millions of miles.\nA world many creatures big and small call home.\n");

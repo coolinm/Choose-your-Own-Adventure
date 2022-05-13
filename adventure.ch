@@ -34,21 +34,21 @@ player.spd = 4;
 
 // INTRODUCTION
 printf("Your story starts in Asrich, a world where vast lands stretch across for millions of miles.\nA world many creatures big and small call home.\n");
-sleep(10);
+sleep(8);
 printf("Asrich is ruled by a vengeful and oppressive king named Damion. Everyone who didn't work for Damion hated him.\n");
-sleep(10);
+sleep(8);
 printf("You live in a small village of humans that for years remained almost untouched Damion's greedy grasp.\nBut 4 months ago, his troops ransacked your town, killing many people you had known for years.\n");
-sleep(15);
+sleep(9);
 printf("Resentment for King Damion's rule has led your people to train for a storm on the castle in attempt to kill Damion.\nYou are one of the few who signed up to accompany the raid party.\n");
-sleep(15);
+sleep(8);
 printf("Your story starts in a small training hut, where you and your friend you've known for so many years battles you\nwith a dull wooden sword.\n");
-sleep(15);
+sleep(8);
 printf("But first, what is your name?\n");
 scanf("%s", &name);
 printf("And what is your friend's name?\n");
 scanf("%s", &fName);
 printf("You and ", fName,  " stand on opposite ends of the training hut. For a brief period, neither of you move.\nThen, suddenly, at nearly the exact same time, you charge at each other.\n");
-sleep(15);
+sleep(5);
 
 player.name = name;
 friendo.name = fName;
@@ -93,8 +93,8 @@ if(fOutcome = 1){
         if(sChoice == "1"){
             printf("You and your party charge the great Twilight Lich. It's head whips towards you, and with\na devilish screech, it begins charging back at you. When it gets to you, it uses it's razor sharp claws to quickly dispatch most of your party.\n");
             sleep(9);
-            printf("Darting around the trees of the bloody battlefield with the grace of a gazelle, it takes\nout your team with deadly precision. Eventually, the only person left is you.\n");
-            sleep(7);
+            printf("\"Help, ", player.name, "!\" One of your party members yell. Darting around the trees of the bloody battlefield with the grace of a gazelle, it takes\nout your team with deadly precision. Eventually, the only person left is you.\n");
+            sleep(9);
             printf("The monster stops in front of you, staring straight into your soul with dead eyes. Fear\nhas overtaken you, and you cannot move. With one last swing of it's claws, everything fades to black.\n");
             sleep(7);
             ending(1);

@@ -18,6 +18,7 @@ int dodge();
 int enemyChoice();
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
 int startBattle(struct character player, struct character enemy);
+void ending(int endnum);
 
 
 // CREATING PLAYER CHARACTER
@@ -96,8 +97,7 @@ if(fOutcome = 1){
             sleep(7);
             printf("The monster stops in front of you, staring straight into your soul with dead eyes. Fear\nhas overtaken you, and you cannot move. With one last swing of it's claws, everything fades to black.\n");
             sleep(7);
-            printf("You achieved the Death 1 Ending.\n");
-            exit();
+            ending(1);
             
         // Run
         } else if (sChoice == "2"){
@@ -111,14 +111,13 @@ if(fOutcome = 1){
             sleep(8);
             printf("As you enter the castle through an unsecured backdoor, you quickly find yourself faced with an\nonslaught of guards. A member of your party tells you and your friend to run to the throne room, and that they will hold off the guards.\n");
             sleep(9);
-            printf("You and ", friendo.name, " run to the throne room, where King Damion sits. He looks at you.\n\"I've been expecting you, " ,player.name, "\," he says. He starts monologuing about his evil plan, and despite everything, you agree with him. You don't know why, but you do.\n");
+            printf("You and ", friendo.name, " run to the throne room, where King Damion sits. He looks at you.\n\"I've been expecting you, " ,player.name, "\" he says. He starts monologuing about his evil plan, and despite everything, you agree with him. You don't know why, but you do.\n");
             sleep(9);
             printf("You look to your friend, who looks ready to kill the king. You put your hand on your sword.\nYour brain has been corrupted by greed, and all you can think about is the power that being King would grant you. You pull out your sword.\n");
             sleep(8);
             printf("You swing your sword at your friend. Caught off, the sword goes straight through his stomach.\nFalling sideways, his body hits the floor, dead and cold. King Damion smiles evily at you, and you smile back.\n");
             sleep(5);
-            printf("You achieved the Greed Ending.\n");
-            exit();
+            ending(2);
             
         // Sneak
         } else if (sChoice == "3"){
@@ -126,14 +125,13 @@ if(fOutcome = 1){
             sleep(8);
             printf("You make it to the throne room, where King Damion sits. \"", player.name, ", ", friendo.name, "... you made it...\"He says.\nHe is very powerful, but heavily outnumbered.You kill him after a short struggle, saving the kingdom.\n");
             sleep(5);
-            printf("You achieved the Happy 1 Ending.\n");
-            exit();
+            ending(3);
             
         };
         
     // Surrender
     } else if (fChoice == "2"){
-        printf("You give up and put your sword away. ", friendo.name, " stares at you, a little disappointed that you gave up.\nThey then light up as if they remembered something important. \"" player.name, ", do you think you would be up to search for an artifact in the desert?\" They ask.\n");
+        printf("You give up and put your sword away. ", friendo.name, " stares at you, a little disappointed that you gave up.\nThey then light up as if they remembered something important. \"", player.name, ", do you think you would be up to search for an artifact in the desert?\" They ask.\n");
         sleep(9);
         printf("\"Sure,\" you say. You quickly pack your stuff, setting off towards the artifact. You don't know what it does, as\n", friendo.name, " kept the details vague, but they've never lead you wrong, right? What's the worst that could happen?\n");
         sleep(7);
@@ -144,7 +142,7 @@ if(fOutcome = 1){
         
         // Swamp
         if(sChoice2 == "1"){
-            printf(friendo.name, " looks a little bit uncertain, but agrees. \"", player.name, ", are you sure? It seems...\nunpleasent...\" they say.")
+            printf(friendo.name, " looks a little bit uncertain, but agrees. \"", player.name, ", are you sure? It seems...\nunpleasent...\" they say.");
             sleep(5);
             printf("You set off towards the swamp. After a short journey, filled with frogs, snakes, and a few dangerous monsters,\nyou reach the desert. You look into your bag, and with a dark sense of dread, you realize you are dangerously low on food and water.\n");
             sleep(7);
@@ -152,9 +150,7 @@ if(fOutcome = 1){
             sleep(7);
             printf("Tired, thirsty, and hungry, you give up, falling to your knees, then down onto your side in the sand. Laying\ndown in the harsh climate, you surrender, dying alone in the desert.\n");
             sleep(6);
-            printf("You achieved the Surrender Ending.\n");
-            sleep(5);
-            exit();
+            ending(4);
             
         // Valley
         } else if (sChoice2 == "2"){
@@ -162,12 +158,11 @@ if(fOutcome = 1){
             sleep(7);
             printf("With little trouble, you travel through the valley. You reach the desert, where your map leads to the location of\nthe ruins where the artifact is located.\n");
             sleep(6);
-            printf("\"", player.name ", I can't find anything...", friendo.name, " says. After a while, a local desert dweller finds\nyou and tells them that the artifact they search for was taken long ago.\n");
+            printf("\"", player.name, ", I can't find anything...", friendo.name, " says. After a while, a local desert dweller finds\nyou and tells them that the artifact they search for was taken long ago.\n");
             sleep(7);
             printf("Disappointed but slightly amused by the situation, you and your companion return home unharmed.\n");
             sleep(4);
-            printf("You achieved the Happy 2 Ending.\n");
-            exit();
+            ending(5);
             
         // Mountain
         } else if (sChoice2 == "3"){
@@ -179,8 +174,7 @@ if(fOutcome = 1){
             sleep(8);
             printf(friendo.name, " has stabbed you. The world around you becomes blurry and faint, and you only hear one thing before you\n slip away. \"I'm sorry, ", player.name, ".\" ", friendo.name, " says.\n");
             sleep(7);
-            printf("You achieved the Betrayal Ending.\n");
-            exit();
+            ending(6);
             
         };
         
@@ -193,7 +187,7 @@ if(fOutcome = 1){
     sleep(7);
     printf("You shake yourself off and pull yourself back up to your feet. You smile at ", friendo.name, "\nhappily. Then, a muscular, serious-faced man walks into the training hut.\n");
     sleep(7);
-    printf("\"Jacob! What is it?\" ", friendo.name, " asks. \"", player.name, ", " friendo.name, ". The raid party is almost finished. We\n need a few more people to accompany us. You two get your things ready.\" Jacob remarks.\n");
+    printf("\"Jacob! What is it?\" ", friendo.name, " asks. \"", player.name, ", ", friendo.name, ". The raid party is almost finished. We\n need a few more people to accompany us. You two get your things ready.\" Jacob remarks.\n");
     sleep(7);
     printf("You and your companion share an expression of both excitement and nervousness. Then, looking back\nat Jacob, you nod.");
     sleep(5);
@@ -214,8 +208,7 @@ if(fOutcome = 1){
         sleep(8);
         printf("Fueled by rage, you race at Damion, killing him easily. You won and saved the kingdom, but lost the one person who felt like family.\n");
         sleep(5);
-        printf("You achieved the Bittersweet Ending.");
-        exit();
+        ending(7);
     
     // Shortcut
     } else if (sChoice3 == "2"){
@@ -223,8 +216,7 @@ if(fOutcome = 1){
         sleep(9);
         printf("The bandits start attacking you and your party, using dirty tricks to defeat your men. Realizing you are outmatched, you\nbegin to run away, but a bandit finds you. He throws his dagger straight toward your face. Everything goes dark.\n");
         sleep(8);
-        printf("You achieved the Death Ending 2.");
-        exit();
+        ending(8);
         
     // Camp
     } else if (sChoice3 == "3"){
@@ -234,25 +226,12 @@ if(fOutcome = 1){
         sleep(7);
         printf("Realizing what they are doing, you run towards them, trying to shake them awake, but you're too late. ", friendo.name, " is dead,\nstolen away by the spirits. You cry over their body, slamming your first into the ground.\n");
         sleep(6);
-        printf("You achieved the Sad Ending.\n");
-        exit();
+        ending(9);
         
         
     };
     
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -420,4 +399,40 @@ int enemyChoice(){
     int num = randint(1, 3);
     
     return(num);
+};
+
+void ending(int endnum){
+    
+    switch(endnum){
+        case 1:
+            printf("You achieved the Death 1 Ending.");
+            break;
+        case 2:
+            printf("You achieved the Greed Ending.");
+            break;
+        case 3:
+            printf("You achieved the Happy 1 Ending.");
+            break;
+        case 4:
+            printf("You achieved the Surrender Ending.");
+            break;
+        case 5:
+            printf("You achieved the Happy 2 Ending.");
+            break;
+        case 6:
+            printf("You achieved the Betrayal Ending.");
+            break;
+        case 7:
+            printf("You achieved the Bittersweet Ending.");
+            break;
+        case 8:
+            printf("You achieved the Death 2 Ending.");
+            break;
+        case 9:
+            printf("You achieved the Sad Ending.");
+            break;
+        
+    };
+    
+    exit(1);
 };

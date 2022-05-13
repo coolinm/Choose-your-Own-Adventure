@@ -9,7 +9,7 @@ struct character {
     string_t name;
     int hp, atk, def, spd, location;
 };
-string_t name, fName;
+string_t name, fName, cheat;
 
 
 // FUNCTION DEFINITION 
@@ -19,6 +19,7 @@ int enemyChoice();
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
 int startBattle(struct character player, struct character enemy);
 void ending(int endnum);
+void cheatsheet(int num);
 
 
 // CREATING PLAYER CHARACTER
@@ -30,6 +31,19 @@ player.hp = 40;
 player.atk = 7;
 player.def = 5;
 player.spd = 4;
+
+printf("Before you start playing, would you like a cheat sheet of the endings?\nType \"y\" for yes and \"n\" for no.\n");
+scanf("%s", &cheat);
+
+while(cheat != "y" && cheat != "Y" && cheat != "n" && cheat != "N"){
+    printf("That is not a valid option. Type \"y\" for yes and \"n\" for no.\n");
+    scanf("%s", &cheat);
+    
+};
+
+if (cheat == "y"){
+    printf(
+
 
 
 // INTRODUCTION
@@ -57,7 +71,7 @@ int fOutcome = startBattle(player, friendo);
 string_t fChoice;
 
 
-// FIRST CHOICE
+// FIRST BATTLE
 
 // Win
 if(fOutcome = 1){
@@ -71,7 +85,7 @@ if(fOutcome = 1){
         scanf("%s", &fChoice);
     };
     
-    // Help
+    // Option 1
     if (fChoice == "1"){
         printf("You hold your hand out to ", friendo.name, ", pulling them back up to their feet. They smile at you\nhappily. Then, a muscular, serious-faced man walks into the training hut.\n");
         sleep(7);
@@ -89,7 +103,7 @@ if(fOutcome = 1){
         
         string_t sChoice = choice("Attack the beast", "run past it", "sneak around it");
         
-        // Attack
+        // End 1
         if(sChoice == "1"){
             printf("You and your party charge the great Twilight Lich. It's head whips towards you, and with\na devilish screech, it begins charging back at you. When it gets to you, it uses it's razor sharp claws to quickly dispatch most of your party.\n");
             sleep(9);
@@ -99,7 +113,7 @@ if(fOutcome = 1){
             sleep(7);
             ending(1);
             
-        // Run
+        // End 2
         } else if (sChoice == "2"){
             printf("You look to your party, quietly communicating to them to run as fast as they can past\nthe Lich on your signal. Shortly after, you wave your hand, signaling them to begin running.\n");
             sleep(7);
@@ -119,7 +133,7 @@ if(fOutcome = 1){
             sleep(5);
             ending(2);
             
-        // Sneak
+        // End 3
         } else if (sChoice == "3"){
             printf("You and your team sneak around the Lich, successfully avoiding it's wrath. You make it out of\nthe forest and get into the castle through a small backdoor. With some trouble, you make it past the waves and waves of guards that find you throughout the castle.\n");
             sleep(8);
@@ -129,7 +143,7 @@ if(fOutcome = 1){
             
         };
         
-    // Surrender
+    // Option 2
     } else if (fChoice == "2"){
         printf("You give up and put your sword away. ", friendo.name, " stares at you, a little disappointed that you gave up.\nThey then light up as if they remembered something important. \"", player.name, ", do you think you would be up to search for an artifact in the desert?\" They ask.\n");
         sleep(9);
@@ -140,7 +154,7 @@ if(fOutcome = 1){
         
         string_t sChoice2 = choice("Travel through the swamp", "valley", "mountain");
         
-        // Swamp
+        // End 4
         if(sChoice2 == "1"){
             printf(friendo.name, " looks a little bit uncertain, but agrees. \"", player.name, ", are you sure? It seems...\nunpleasent...\" they say.");
             sleep(5);
@@ -152,7 +166,7 @@ if(fOutcome = 1){
             sleep(6);
             ending(4);
             
-        // Valley
+        // End 5
         } else if (sChoice2 == "2"){
             printf("You set off to the valley. After only a few hours of trekking, you make it safely there. The valley is beautiful,\nand you admire the river flowing through it as you continue on.\n");
             sleep(7);
@@ -164,7 +178,7 @@ if(fOutcome = 1){
             sleep(4);
             ending(5);
             
-        // Mountain
+        // End 6
         } else if (sChoice2 == "3"){
             printf("You leave home towards the mountain. ", friendo.name, " is uneasy and quiet for the whole trip,\nbut you chalk it up to them just being a little nervous to pass over the mountain.\n");
             sleep(7);
@@ -181,7 +195,7 @@ if(fOutcome = 1){
     };
     
     
-// Lose
+// Option 3
 } else if (fOutcome = 0) {
     printf("You are knocked down by ", friendo.name, ". They look down at you on the ground with a smile on their face.\n\"Nice try, ", player.name, "!\"\n");
     sleep(7);
@@ -198,7 +212,7 @@ if(fOutcome = 1){
     
     sChoice3 = choice("Continue through the valley", "go off on a potential shortcut", "set up camp for the night");
     
-    // Valley
+    // End 7
     if (sChoice3 == "1"){
         printf("You decide to continue through the valley. \"You heard ", player.name, "! Keep moving!\" ", friendo.name, " says.\nYour party eventually makes it to the castle, and begin to storm through.\n");
         sleep(8);
@@ -210,7 +224,7 @@ if(fOutcome = 1){
         sleep(5);
         ending(7);
     
-    // Shortcut
+    // End 8
     } else if (sChoice3 == "2"){
         printf("Walking towards the shortcut, you are thankful to finally be heading away from the dreadful valley. Everything is going well until\na group of bandits attack you from behind a rock. \"", player.name, ", look out!\" ", friendo.name, " shouts.\n");
         sleep(9);
@@ -218,7 +232,7 @@ if(fOutcome = 1){
         sleep(8);
         ending(8);
         
-    // Camp
+    // End 9
     } else if (sChoice3 == "3"){
         printf("Your party sets up tents while you go out and find food. It's dark when you come back, and everyone has quick dinner before\nthey retire to their tents. \"Goodnight, ", friendo.name, ",\" you say. \"Night, ", player.name, ", they reply.\n");
         sleep(8);
@@ -435,4 +449,38 @@ void ending(int endnum){
     };
     
     exit(1);
+};
+
+void cheatsheet(int num){
+    
+    switch(num){
+        case 1:
+            printf("To reach the first ending, you must first win the battle against your friend.\nThen, help them get up. Finally, attack the beast in the forest.\n");
+            break;
+        case 2:
+            printf("To reach the second ending, you must first win the battle against your friend.\nThen, help them get up. Finally, run past the beast in the forest.\n");
+            break;
+        case 3:
+            printf("To reach the 3rd ending, you must first win the battle agaisnt your friend.\nThen, help them get up. Finally, sneak past the beast in the forest.\n");
+            break;
+        case 4:
+            printf("To reach the 4th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel through the swamp.\n");
+            break;
+        case 5:
+            printf("To reach the 5th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel through the valley.\n");
+            break;
+        case 6:
+            printf("To reach the 6th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel over the mountain.\n");
+            break;
+        case 7:
+            printf("To reach the 7th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, continue through the valley.\n");
+            break;
+        case 8:
+            printf("To reach the 8th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, go off on the potential shortcut.\n");
+            break;
+        case 9:
+            printf("To reach the 9th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, set up camp for the night.\n");
+            break;
+        
+    };
 };

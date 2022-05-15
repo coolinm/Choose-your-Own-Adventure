@@ -19,7 +19,7 @@ int enemyChoice();
 string_t choice(string_t choice1, string_t choice2, string_t choice3);
 int startBattle(struct character player, struct character enemy);
 void ending(int endnum);
-void cheatsheet(int num);
+void cheatsheet(string_t num);
 
 
 // CREATING PLAYER CHARACTER
@@ -108,7 +108,7 @@ if(fOutcome = 1){
         sleep(7);
         printf("The Twilight Lich. Legends tell of a ghoulish monster who stalks between the trees, searching\nfor weary travelers to consume the souls of. You freeze, and so does your entire party. It hasn't noticed you yet.\n");
         sleep(8);
-        printf("You quickly think of a plan.");
+        printf("You quickly think of a plan.\n");
         
         string_t sChoice = choice("Attack the beast", "run past it", "sneak around it");
         
@@ -263,7 +263,7 @@ if(fOutcome = 1){
 // CHOICE
 string_t choice(string_t choice1, string_t choice2, string_t choice3){
     string_t choiceNum;
-    printf("What do you do? ", choice1, " (1), ", choice2, " (2), ", choice3, " (3).\n");
+    printf("What do you do? ", choice1, " (1), ", choice2, " (2), or ", choice3, " (3).\n");
     printf("Type 1, 2, or 3 to select an option.\n");
     scanf("%i", &choiceNum);
     
@@ -398,6 +398,8 @@ int startBattle(struct character player, struct character enemy){
         sleep(5);
         return(0);
     };
+    
+    return(0);
 };
 
 // ATTACK
@@ -460,35 +462,35 @@ void ending(int endnum){
     exit(1);
 };
 
-void cheatsheet(int num){
+void cheatsheet(string_t num){
     
     switch(num){
-        case 1:
-            printf("To reach the first ending, you must first win the battle against your friend.\nThen, help them get up. Finally, attack the beast in the forest.\n");
+        case "1":
+            printf("To reach the first ending, you must first win the battle against your friend.\nThen, help them get up. Finally, attack the beast in the forest.\n\n");
             break;
-        case 2:
-            printf("To reach the second ending, you must first win the battle against your friend.\nThen, help them get up. Finally, run past the beast in the forest.\n");
+        case "2":
+            printf("To reach the second ending, you must first win the battle against your friend.\nThen, help them get up. Finally, run past the beast in the forest.\n\n");
             break;
-        case 3:
-            printf("To reach the 3rd ending, you must first win the battle agaisnt your friend.\nThen, help them get up. Finally, sneak past the beast in the forest.\n");
+        case "3":
+            printf("To reach the 3rd ending, you must first win the battle agaisnt your friend.\nThen, help them get up. Finally, sneak past the beast in the forest.\n\n");
             break;
-        case 4:
-            printf("To reach the 4th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel through the swamp.\n");
+        case "4":
+            printf("To reach the 4th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel through the swamp.\n\n");
             break;
-        case 5:
-            printf("To reach the 5th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel through the valley.\n");
+        case "5":
+            printf("To reach the 5th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel through the valley.\n\n");
             break;
-        case 6:
-            printf("To reach the 6th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel over the mountain.\n");
+        case "6":
+            printf("To reach the 6th ending, you must first win the battle agaisnt your friend.\nThen, surrender. Finally, travel over the mountain.\n\n");
             break;
-        case 7:
-            printf("To reach the 7th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, continue through the valley.\n");
+        case "7":
+            printf("To reach the 7th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, continue through the valley.\n\n");
             break;
-        case 8:
-            printf("To reach the 8th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, go off on the potential shortcut.\n");
+        case "8":
+            printf("To reach the 8th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, go off on the potential shortcut.\n\n");
             break;
-        case 9:
-            printf("To reach the 9th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, set up camp for the night.\n");
+        case "9":
+            printf("To reach the 9th ending, you must first lose the battle against you friend. To do this, simply defend every time.\nThen, set up camp for the night.\n\n");
             break;
         
     };

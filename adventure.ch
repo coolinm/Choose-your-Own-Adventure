@@ -83,7 +83,7 @@ string_t fChoice;
 // FIRST BATTLE
 
 // Win
-if(fOutcome = 1){
+if(fOutcome == 1){
     printf("You knock down ", friendo.name, ", and they look back up at you with a surprised smile on their face.\n\"Wow! Good fight, ", player.name, "!\"\n");
     sleep(7);
     printf("What do you do now?\nHelp ", friendo.name, " get back up (1) or give up and put your sword away (2)?\nType 1 or 2 to select your choice.\n");
@@ -205,7 +205,7 @@ if(fOutcome = 1){
     
     
 // Option 3
-} else if (fOutcome = 0) {
+} else if (fOutcome == 0) {
     printf("You are knocked down by ", friendo.name, ". They look down at you on the ground with a smile on their face.\n\"Nice try, ", player.name, "!\"\n");
     sleep(7);
     printf("You shake yourself off and pull yourself back up to your feet. You smile at ", friendo.name, "\nhappily. Then, a muscular, serious-faced man walks into the training hut.\n");
@@ -458,8 +458,6 @@ void ending(int endnum){
             break;
         
     };
-    
-    exit(1);
 };
 
 void cheatsheet(string_t num){
